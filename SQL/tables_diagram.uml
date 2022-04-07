@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>e5a1f018-403c-4cc1-ad60-838fa8b398f4.SCHEMA:host1323541_taskmanager</OriginalElement>
+  <nodes>
+    <node x="52.37500000000006" y="436.0">e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_user_messengers</node>
+    <node x="448.62500000000006" y="436.0">e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_stages</node>
+    <node x="722.0606060606061" y="140.5">e5a1f018-403c-4cc1-ad60-838fa8b398f4.VIEW:host1323541_taskmanager.vw_tasks</node>
+    <node x="279.62500000000006" y="449.0">e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_task_users</node>
+    <node x="0.0" y="218.0">e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_type_messenger</node>
+    <node x="446.00000000000006" y="140.0">e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_tasks</node>
+    <node x="213.00000000000006" y="166.0">e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_users</node>
+    <node x="470.00000000000006" y="0.0">e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_status_task</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_task_users" target="e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_tasks" relationship="REFERENCES">
+      <point x="23.374999999999943" y="-58.0" />
+      <point x="377.5" y="411.0" />
+      <point x="552.0" y="411.0" />
+      <point x="0.0" y="123.0" />
+    </edge>
+    <edge source="e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_task_users" target="e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_users" relationship="REFERENCES">
+      <point x="-5.6843418860808015E-14" y="-58.0" />
+      <point x="354.125" y="411.0" />
+      <point x="319.5" y="411.0" />
+      <point x="-5.6843418860808015E-14" y="97.0" />
+    </edge>
+    <edge source="e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_user_messengers" target="e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_type_messenger" relationship="REFERENCES">
+      <point x="-55.37500000000006" y="-71.0" />
+      <point x="0.0" y="45.0" />
+    </edge>
+    <edge source="e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_stages" target="e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_tasks" relationship="REFERENCES">
+      <point x="0.0" y="-71.0" />
+      <point x="554.625" y="411.0" />
+      <point x="552.0" y="411.0" />
+      <point x="0.0" y="123.0" />
+    </edge>
+    <edge source="e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_user_messengers" target="e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_users" relationship="REFERENCES">
+      <point x="-5.6843418860808015E-14" y="-71.0" />
+      <point x="151.875" y="411.0" />
+      <point x="319.5" y="411.0" />
+      <point x="-5.6843418860808015E-14" y="97.0" />
+    </edge>
+    <edge source="e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_tasks" target="e5a1f018-403c-4cc1-ad60-838fa8b398f4.TABLE:host1323541_taskmanager.tbl_status_task" relationship="REFERENCES">
+      <point x="0.0" y="-123.0" />
+      <point x="0.0" y="45.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="467.5" y="289.0" />
+  <SelectedNodes>
+    <node>e5a1f018-403c-4cc1-ad60-838fa8b398f4.VIEW:host1323541_taskmanager.vw_tasks</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
