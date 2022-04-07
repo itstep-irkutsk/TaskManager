@@ -1,0 +1,41 @@
+POST http://localhost:5030/api/v0/task/create
+Content-Type: application/json
+
+{}
+
+<> 2022-04-05T162338.200.json
+
+###
+DELETE http://localhost:5030/api/v0/task/delete/5
+Accept: application/json
+
+<> 2022-04-05T162338-1.200.json
+
+###
+PUT http://localhost:5030/api/v0/task/update/5
+Accept: application/json
+
+###
+GET http://localhost:5030/api/v0/task/5
+Accept: application/json
+
+<> 2022-04-05T162339.200.json
+<> 2022-04-05T161521.200.json
+
+###
+GET http://localhost:5030/api/v0/tasks
+Accept: application/json
+
+<> 2022-04-05T162339-1.200.json
+<> 2022-04-05T160521.200.json
+<> 2022-04-05T160413.200.json
+
+###
+GET http://localhost:5030/api/v0/Tasks
+Accept: application/json
+
+<> 2022-04-05T162339-2.200.json
+<> 2022-04-05T160522.200.json
+<> 2022-04-05T160323.200.json
+
+###
