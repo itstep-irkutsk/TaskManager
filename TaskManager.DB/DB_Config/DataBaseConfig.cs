@@ -1,9 +1,8 @@
-﻿using System.Data;
-using System.Text.Json;
+﻿using System.Text.Json;
 
 namespace TaskManager.DB.DB_Config;
 
-public class DataBaseConfig
+public record DataBaseConfig
 {
     public string Server { get; set; }
     public string Database { get; set; }
@@ -21,8 +20,19 @@ public class DataBaseConfig
         try
         {
             var config = JsonSerializer.Deserialize<DataBaseConfig>(json);
-            if (config is null) throw new NoNullAllowedException();
             return config;
+        }
+        catch (ArgumentNullException)
+        {
+            throw new ArgumentNullException(nameof(json));
+        }
+        catch (JsonException e)
+        {
+            throw new JsonException(e.Message);
+        }
+        catch (NotSupportedException e)
+        {
+            throw new NotSupportedException(e.Message);
         }
         catch (Exception e)
         {
