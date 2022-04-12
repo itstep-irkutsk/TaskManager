@@ -5,11 +5,11 @@ using TaskManager.DB.Models;
 
 namespace TaskManager.DB.Lib;
 
-public class CRUD_DB
+public class CrudStageDb
 {
-    private MySqlConnection _db;
+    private readonly MySqlConnection _db;
 
-    public CRUD_DB(string connectionConfig)
+    public CrudStageDb(string connectionConfig)
     {
         var configDb = DataBaseConfig.CreateFromJson(connectionConfig);
         _db = new MySqlConnection(configDb.ToString());
