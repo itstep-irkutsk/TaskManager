@@ -1,4 +1,6 @@
-﻿namespace TaskManager.DB.Models;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace TaskManager.DB.Models;
 
 public record Stage
 {
