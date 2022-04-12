@@ -24,4 +24,10 @@
       <ProjectReference Include="..\TaskManager.DB\TaskManager.DB.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="config_db.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

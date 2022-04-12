@@ -4,13 +4,14 @@ using System.IO;
 using TaskManager.DB.Lib;
 using TaskManager.DB.Models;
 using Xunit;
+using Task = System.Threading.Tasks.Task;
 
 namespace TaskManager.DB.Test;
 
 public class CRUD_DBTest
 {
     [Fact]
-    public void GetAllStagesAsync_Test()
+    public async Task GetAllStagesAsync_Test()
     {
         IEnumerable<Stage> expectedStages = new List<Stage>
         {
@@ -32,7 +33,7 @@ public class CRUD_DBTest
 
         var conn = GetJsonFromFile();
         var db = new CRUD_DB(conn);
-        var actualStages = db.GetAllStagesAsync().Result;
+        var actualStages = await db.GetAllStagesAsync();
         
         Assert.Equal(expectedStages, actualStages);
     }
