@@ -12,10 +12,4 @@
       <PackageReference Include="MySql.Data" Version="8.0.28" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Update="Lib\config_db.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
-
 </Project>

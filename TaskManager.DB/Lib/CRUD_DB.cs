@@ -13,6 +13,8 @@ public class CRUD_DB
     {
         var configDb = DataBaseConfig.CreateFromJson(connectionConfig);
         _db = new MySqlConnection(configDb.ToString());
+        
+        Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
     }
 
     public async Task<IEnumerable<Stage>> GetAllStagesAsync()
