@@ -8,7 +8,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace TaskManager.DB.Test;
 
-public class CRUD_DBTest
+public class CrudStageDbTest
 {
     [Fact]
     public async Task GetAllStagesAsync_Test()
@@ -32,7 +32,7 @@ public class CRUD_DBTest
         };
 
         var conn = GetJsonFromFile();
-        var db = new CRUD_DB(conn);
+        var db = new CrudStageDb(conn);
         var actualStages = await db.GetAllStagesAsync();
         
         Assert.Equal(expectedStages, actualStages);
