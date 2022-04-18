@@ -1,21 +1,10 @@
 ﻿using Dapper;
-using MySql.Data.MySqlClient;
-using TaskManager.DB.DB_Config;
-using TaskManager.DB.Models;
 
 namespace TaskManager.DB.Lib;
 
-public class CrudTaskDb
+public class CrudTaskDb : DbConnect
 {
-    private readonly MySqlConnection _db;
-
-    public CrudTaskDb(string connectionConfig)
-    {
-        var configDb = DataBaseConfig.CreateFromJson(connectionConfig);
-        _db = new MySqlConnection(configDb.ToString());
-        
-        Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
-    }
+    public CrudTaskDb() : base() { }
 
     public async Task<IEnumerable<Models.Task>> GetAllTasksAsync()
     {

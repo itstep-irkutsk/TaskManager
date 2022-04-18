@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TaskManager.WebAPI.Models;
 
 namespace TaskManager.WebAPI.Controllers;
 
@@ -7,8 +8,8 @@ namespace TaskManager.WebAPI.Controllers;
 public class TasksController : ControllerBase
 {
     [HttpGet]
-    public JsonResult GetAllTasks()
+    public async Task<JsonResult> GetAllTasks()
     {
-        return new JsonResult(new {result = true});
+        return new JsonResult(await TaskListItem.GetPreviewListAsync());
     }
 }

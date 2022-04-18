@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using TaskManager.DB.Lib;
 using Xunit;
 using Task = System.Threading.Tasks.Task;
@@ -27,15 +26,9 @@ public class CrudTaskDbTest
             }
         };
         
-        var conn = GetJsonFromFile();
-        var db = new CrudTaskDb(conn);
+        var db = new CrudTaskDb();
         var actualTasks = await db.GetAllTasksAsync();
         
         Assert.Equal(expectedTasks, actualTasks);
-    }
-    
-    private string GetJsonFromFile()
-    {
-        return File.ReadAllText(@"config_db.json");
     }
 }

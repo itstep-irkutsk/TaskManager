@@ -1,5 +1,3 @@
-using System;
-using System.Text.Json;
 using TaskManager.DB.DB_Config;
 using Xunit;
 
@@ -32,21 +30,7 @@ public class DataBaseConfigTest
             Uid = "{uid}",
             Pwd = "{pwd}"
         };
-        var json = "{\"Server\": \"{server}\",\"Database\": \"{database}\",\"Uid\": \"{uid}\",\"Pwd\": \"{pwd}\"}";
-        var actualDbConfig = DataBaseConfig.CreateFromJson(json);
+        var actualDbConfig = DataBaseConfig.CreateFromJson();
         Assert.Equal(expectedDbConfig, actualDbConfig);
-    }
-
-    [Fact]
-    public void CreateFromJson_ArgumentNullException_Test()
-    {
-        Assert.Throws<ArgumentNullException>(() => DataBaseConfig.CreateFromJson(null));
-    }
-    
-    [Fact]
-    public void CreateFromJson_JsonException_Test()
-    {
-        const string json = "[{\"id\": 4}, {\"id\": 5}]";
-        Assert.Throws<JsonException>(() => DataBaseConfig.CreateFromJson(json));
     }
 }

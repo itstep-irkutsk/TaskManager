@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using TaskManager.DB.Lib;
 using TaskManager.DB.Models;
 using Xunit;
@@ -30,16 +29,10 @@ public class CrudStageDbTest
                 TaskId = 2
             }
         };
-
-        var conn = GetJsonFromFile();
-        var db = new CrudStageDb(conn);
+        
+        var db = new CrudStageDb();
         var actualStages = await db.GetAllStagesAsync();
         
         Assert.Equal(expectedStages, actualStages);
-    }
-
-    private string GetJsonFromFile()
-    {
-        return File.ReadAllText(@"config_db.json");
     }
 }

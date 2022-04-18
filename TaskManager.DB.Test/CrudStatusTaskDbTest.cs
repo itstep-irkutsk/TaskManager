@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using TaskManager.DB.Lib;
 using TaskManager.DB.Models;
 using Xunit;
@@ -21,16 +19,10 @@ public class CrudStatusTaskDbTest
                 Status = "created"
             }
         };
-
-        var conn = GetJsonFromFile();
-        var db = new CrudStatusTaskDb(conn);
+        
+        var db = new CrudStatusTaskDb();
         var actualStages = await db.GetAllStatusTasksAsync();
         
         Assert.Equal(expectedStages, actualStages);
-    }
-
-    private string GetJsonFromFile()
-    {
-        return File.ReadAllText(@"config_db.json");
     }
 }

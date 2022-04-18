@@ -15,16 +15,17 @@ public record DataBaseConfig
         return $"{nameof(Server)}={Server};{nameof(Database)}={Database};{nameof(Uid)}={Uid};{nameof(Pwd)}={Pwd}";
     }
 
-    public static DataBaseConfig CreateFromJson(string json)
+    public static DataBaseConfig CreateFromJson()
     {
         try
         {
+            var json = File.ReadAllText(@"config_db.json");
             var config = JsonSerializer.Deserialize<DataBaseConfig>(json);
             return config;
         }
         catch (ArgumentNullException)
         {
-            throw new ArgumentNullException(nameof(json));
+            throw new ArgumentNullException();
         }
         catch (JsonException e)
         {

@@ -10,4 +10,14 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\TaskManager.DB\TaskManager.DB.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="config_db.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
